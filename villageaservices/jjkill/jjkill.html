@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Banned by Gojo</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #container {
+      position: relative;
+      width: 768px;
+      height: 768px;
+      background: url('https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-a3a4-61f7-bac6-7b0dc8a59d6b/raw?se=2025-06-15T09%3A04%3A52Z&sp=r&sv=2024-08-04&sr=b&scid=c2dbb895-1fd6-5c96-81f0-4fe21059df5b&skoid=add8ee7d-5fc7-451e-b06e-a82b2276cf62&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-14T21%3A44%3A04Z&ske=2025-06-15T21%3A44%3A04Z&sks=b&skv=2024-08-04&sig=h6MWxH2q12qZF%2BmnICC0Ecu6ngoSObg/jl44MTjnbUk%3D') no-repeat center center;
+      background-size: cover;
+    }
+
+    #victim-img {
+      position: absolute;
+      top: 270px;
+      left: 615px;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 0 16px black;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <img id="victim-img" alt="Banned User">
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const victim = params.get("victim");
+    const img = document.getElementById("victim-img");
+    img.src = victim ? decodeURIComponent(victim) : "https://www.google.com/favicon.ico";
+  </script>
+</body>
+</html>
